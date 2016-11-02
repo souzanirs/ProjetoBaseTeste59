@@ -16,7 +16,7 @@ public class LivroActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.livro_activity);
+        setContentView(R.layout.activity_livro);
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.livros_view, new ListaLivroFragment());

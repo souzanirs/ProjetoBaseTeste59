@@ -20,9 +20,6 @@ public class DetalheLivroFragment extends Fragment {
 
         View detalheLivro = inflater.inflate(R.layout.fragment_detalhes_livro, container,false);
 
-
-        TextView nomeLivro = 
-
         return detalheLivro;
     }
 }
