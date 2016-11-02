@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NOME DO LIVRO"
+        android:id="@+id/detalhe_livro_nome"
+        android:textSize="30dp"
+        android:textColor="#081f43"
+        android:textStyle="bold"/>
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:paddingBottom="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/detalhe_capa"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:padding="10dp"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/detalhe_preco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="R$ 99,90"
+                android:textAlignment="textEnd"
+                android:textSize="40dp"
+                android:textColor="#ed0707"/>
+
+            <TextView
+                android:id="@+id/detalhe_pagamento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="10x R$ 9,99"
+                android:textSize="20dp"
+                android:textAlignment="textEnd"
+                android:paddingBottom="20dp"/>
+
+            <Button
+                android:layout_gravity="end"
+                android:id="@+id/detalhe_btnComprar"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Comprar"
+                android:textColor="#FFFFFF"
+                android:background="#11274e"
+                android:padding="10dp"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="INFORMAÇÕES"
+            android:paddingBottom="10dp"
+            android:textColor="#081f43"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/detalhe_resumo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Uma breve introdução sobre o livro"
+            android:textColor="#494949"
+            android:paddingBottom="20dp"/>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Quantidade de Páginas: "
+                    android:paddingRight="10dp"
+                    android:textColor="#081f43"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/detalhe_qtdePaginas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="100 páginas"/>
+
+            </TableRow>
+
+            <TableRow
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ISBN: "
+                    android:paddingRight="10dp"
+                    android:textColor="#081f43"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/detalhe_ISBN"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="8589384144"/>
+
+            </TableRow>
+
+            <TableRow
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Edição: "
+                    android:paddingRight="10dp"
+                    android:textColor="#081f43"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/detalhe_edicao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1ª Edição"/>
+
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
