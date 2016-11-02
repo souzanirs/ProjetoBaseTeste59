@@ -11,13 +11,14 @@ import java.util.Arrays;
 import java.util.List;
 
 import br.com.caelum.pokemonapp.R;
+import br.com.caelum.pokemonapp.adapter.LivroAdapter;
 import br.com.caelum.pokemonapp.classes.Livro;
 
 /**
  * Created by solzanir on 02/11/16.
  */
 
-public class ListaLivroFragment extends Fragment{
+public class ListaLivroFragment extends Fragment {
 
     private ListView livrosView;
 
@@ -38,7 +39,7 @@ public class ListaLivroFragment extends Fragment{
         List<Livro> listaDeLivros = Arrays.asList(livro);
 
         //Instanciando o adapter com o layout da lista a ser exibida na tela, e lista de livros com o conteúdo
-        ArrayAdapter<Livro> adapter = new ArrayAdapter<Livro>(getActivity(), android.R.layout.simple_list_item_1, listaDeLivros);
+        LivroAdapter adapter = new LivroAdapter(getActivity(), listaDeLivros);
 
         //passando o adapter preenchido para nossa lista exibi-lo
         livrosView.setAdapter(adapter);
