@@ -1,11 +1,18 @@
 package br.com.caelum.pokemonapp.adapter;
 
 import android.app.Activity;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+
+import org.w3c.dom.Text;
+
 import java.util.List;
 import br.com.caelum.pokemonapp.R;
 import br.com.caelum.pokemonapp.classes.Livro;
@@ -24,6 +31,35 @@ public class LivroAdapter extends BaseAdapter {
         this.activity = activity;
     }
 
+
+    @Override
+    public View getView(int posicao, View view, ViewGroup viewGroup) {
+
+        ViewHolder holder;
+
+        if(view == null){
+
+            view = LayoutInflater.from(activity).inflate(R.layout.item, viewGroup, false);
+
+            holder = new ViewHolder(view);
+            view.setTag(holder);
+
+        } else {
+
+            holder = (ViewHolder) view.getTag();
+
+        }
+
+        Livro livro = (Livro) getItem(posicao);
+
+        holder.nomeLivro.setText(livro.getNome());
+        holder.valorLivro.setText("R$ " + String.valueOf(livro.getValorVirtual()));
+        Picasso.with(activity).load(livro.getImagemUrl()).into(holder.capaLivro);
+
+        return view;
+    }
+
+
     @Override
     public int getCount() {
         return livros.size();
@@ -39,20 +75,18 @@ public class LivroAdapter extends BaseAdapter {
         return livros.get(i).getId();
     }
 
-    @Override
-    public View getView(int posicao, View view, ViewGroup viewGroup) {
+    class ViewHolder{
 
-        View livroView = activity.getLayoutInflater().inflate(R.layout.item, viewGroup, false);
+        TextView nomeLivro;
+        TextView valorLivro;
+        ImageView capaLivro;
 
-        Livro livro = livros.get(posicao);
+        ViewHolder(View view){
+            this.nomeLivro = (TextView) view.findViewById(R.id.item_nomeLivro);
+            this.valorLivro = (TextView) view.findViewById(R.id.item_valorLivro);
+            this.capaLivro = (ImageView) view.findViewById(R.id.item_capa);
+        }
 
-        TextView nomeLivro = (TextView) livroView.findViewById(R.id.item_nomeLivro);
-        ImageView capaLivro = (ImageView) livroView.findViewById(R.id.item_capa);
-
-        nomeLivro.setText(livro.getNome());
-
-        //Para a capa utilizar o Picasso
-
-        return livroView;
     }
+
 }

@@ -43,7 +43,6 @@ public class LivroConverter {
 
         if (json != null) {
 
-
             JSONObject jsonObjectTodosLivros = new JSONObject(json);
             JSONArray jsonArrayLivros = jsonObjectTodosLivros.getJSONArray(LIVROS);
 

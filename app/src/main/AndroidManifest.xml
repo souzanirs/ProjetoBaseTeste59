@@ -14,7 +14,7 @@
         <activity android:name=".activity.TelaActivity"></activity>
 
         <activity
-            android:name=".activity.LivroActivity"
+            android:name=".LivroActivity"
             android:label="Livros Casa do Código">
 
             <intent-filter>
